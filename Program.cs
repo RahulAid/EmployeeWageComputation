@@ -5,12 +5,11 @@
         static void Main(string[] args)
         {
 
-            EmpWageBuilderObject dmart = new EmpWageBuilderObject("DMart", 20, 2, 10);
-            EmpWageBuilderObject reliance = new EmpWageBuilderObject("Reliance", 10, 4, 20);
-            dmart.computeEmpWage();
-            Console.WriteLine(dmart.toString());
-            reliance.computeEmpWage();
-            Console.WriteLine(reliance.toString());
+            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
+            empWageBuilder.addCompanyEmpWage("Microsoft", 100, 20, 100);
+            empWageBuilder.addCompanyEmpWage("Google", 200, 30, 150);
+            empWageBuilder.computeEmpWage();
+            Console.ReadLine();
         }
     }
 }
