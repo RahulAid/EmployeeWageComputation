@@ -5,21 +5,13 @@
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Enter a Company Name: ");
-            string companyname = Console.ReadLine();
-
-            Console.WriteLine("Enter Employee Rate Per Hour: ");
-            int empRatePerHour = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter Max. number of working days: ");
-            int numOfWorkingDays = Convert.ToInt32(Console.ReadLine());
-
-            Console.WriteLine("Enter Max. hours allowed per month: ");
-            int maxHoursPerMonth = Convert.ToInt32(Console.ReadLine());
-
-            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
-            empWageBuilder.addCompanyEmpWage(companyname, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder();
+            empWageBuilder.addCompanyEmpWage("Microsoft", 100, 20, 100);
+            empWageBuilder.addCompanyEmpWage("Google", 200, 30, 150);
             empWageBuilder.computeEmpWage();
+            Console.WriteLine("Total Wage as queried by respective companies are : ");
+            Console.WriteLine("Total wage for Microsoft " + empWageBuilder.getTotalWage("Microsoft"));
+            Console.WriteLine("Total wage for Google " + empWageBuilder.getTotalWage("Google"));
             Console.ReadLine();
         }
     }

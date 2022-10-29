@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputation
 {
-    internal class EmpWageBuilderArray
+    public class EmpWageBuilderArray : IComputeEmpWage
     {
         public const int IS_PART_TIME = 1;
         public const int IS_FULL_TIME = 2;
 
         private int numOfCompany = 0;
-        private CompanyEmpWage[] companyEmpWageArray;
+        private CompanyEmpWageInterface[] companyEmpWageArray;
 
         public EmpWageBuilderArray()
         {
-            this.companyEmpWageArray = new CompanyEmpWage[5];
+            this.companyEmpWageArray = new CompanyEmpWageInterface[5];
         }
 
         public void addCompanyEmpWage(string companyname, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
-            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(companyname, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWageInterface(companyname, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
             numOfCompany++;
         }
 
@@ -34,7 +34,7 @@ namespace EmployeeWageComputation
             }
         }
 
-        private int computeEmpWage(CompanyEmpWage companyEmpWage)
+        private int computeEmpWage(CompanyEmpWageInterface companyEmpWage)
         {
             int empHrs = 0, totalEmpHrs = 0, totalWorkingDays = 0;
 

@@ -1,6 +1,11 @@
 ﻿using System;
-
-public class CompanyEmpWage
+public interface IComputeEmpWage
+{
+    public void addCompanyEmpWage(string companyname, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth);
+    public void computeEmpWage();
+    public int getTotalWage(string companyname);
+}
+public class CompanyEmpWageInterface
 {
     public string companyname;
     public int empRatePerHour;
@@ -8,7 +13,7 @@ public class CompanyEmpWage
     public int maxHoursPerMonth;
     public int totalEmpWage;
 
-    public CompanyEmpWage(string companyname, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+    public CompanyEmpWageInterface(string companyname, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
     {
         this.companyname = companyname;
         this.empRatePerHour = empRatePerHour;
