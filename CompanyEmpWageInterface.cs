@@ -5,7 +5,7 @@ public interface IComputeEmpWage
     public void computeEmpWage();
     public int getTotalWage(string companyname);
 }
-public class CompanyEmpWageInterface
+public class CompanyEmpWage
 {
     public string companyname;
     public int empRatePerHour;
@@ -13,19 +13,22 @@ public class CompanyEmpWageInterface
     public int maxHoursPerMonth;
     public int totalEmpWage;
 
-    public CompanyEmpWageInterface(string companyname, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
+    public CompanyEmpWage(string companyname, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
     {
         this.companyname = companyname;
         this.empRatePerHour = empRatePerHour;
         this.numOfWorkingDays = numOfWorkingDays;
         this.maxHoursPerMonth = maxHoursPerMonth;
+        this.totalEmpWage = 0;
     }
+
     public void setTotalEmpWage(int totalEmpWage)
     {
         this.totalEmpWage = totalEmpWage;
     }
+
     public string toString()
     {
-        return "Total Employee Wage for Company " + this.companyname + " is: " + this.totalEmpWage;
+        return "Total Emp Wage for Company " + this.companyname + " is: " + this.totalEmpWage;
     }
 }
